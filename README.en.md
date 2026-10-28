@@ -1,52 +1,127 @@
+<div align="center">
+
+<img src="src/RengaServerSwitcher.Plugin/RengaServerSwitcher.png" alt="Renga Server Switcher" width="72" />
+
 # Renga Server Switcher
 
-**Server profile manager for Renga Professional Collaboration Server.** Store connection profiles and switch between servers or a local working mode without repeatedly entering the host, port, username and access key.
+**Server profile manager for Renga Professional Collaboration Server**
 
-**Version:** `1.1.2` · **Author:** `kartashov_ma` · **Tested on:** Renga Professional 9.3.32980.0, API 2.50, Windows x64
+Save your connection settings once. Quickly switch servers, work offline, and relaunch Renga without manually re-entering credentials.
 
-[Русский README](README.md) · [Installation](docs/INSTALL.md) · [User guide (RU)](docs/USER_GUIDE.md) · [Changelog](CHANGELOG.md)
+<p>
+  <img src="https://img.shields.io/badge/Version-1.1.2-2563eb?style=for-the-badge" alt="Version 1.1.2" />
+  <img src="https://img.shields.io/badge/Status-Stable-16a34a?style=for-the-badge" alt="Stable" />
+  <img src="https://img.shields.io/badge/Renga_Professional-9.3-ef4444?style=for-the-badge" alt="Renga Professional 9.3" />
+  <img src="https://img.shields.io/badge/Renga_API-2.50-7c3aed?style=for-the-badge" alt="Renga API 2.50" />
+</p>
+<p>
+  <img src="https://img.shields.io/badge/Windows-x64-0078d4?style=flat-square&logo=windows&logoColor=white" alt="Windows x64" />
+  <img src="https://img.shields.io/badge/.NET-8-512bd4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET 8" />
+  <img src="https://img.shields.io/badge/C%23-Source-239120?style=flat-square&logo=csharp&logoColor=white" alt="C#" />
+  <img src="https://img.shields.io/badge/License-All%20rights%20reserved-64748b?style=flat-square" alt="All rights reserved" />
+</p>
 
-## Features
+**[📦 Releases](../../releases)** · **[📖 User guide](docs/USER_GUIDE.md)** · **[🛠 Installation](docs/INSTALL.md)** · **[🇷🇺 Русский](README.md)**
 
-- Store multiple connection profiles (name, IP/DNS, port, username, server access key).
-- Configure automatic change synchronization independently per profile.
-- Add, edit and delete profiles; detect duplicates.
-- Indicate the active profile and Renga's connection status.
-- Test TCP reachability of a server endpoint.
-- Switch to local/offline operation without losing saved profiles.
-- Save changes before restarting Renga and automatically relaunch it using an external helper.
-- Encrypt access keys **in the plugin's profile store** via Windows DPAPI.
-- Optionally show the switcher window on Renga startup; keep operation logs.
+<sub>v1.1.2 · Author: <b>kartashov_ma</b> · Tested with Renga Professional 9.3.32980.0 / Windows x64</sub>
 
-## Requirements
+</div>
 
-Tested on **Renga Professional 9.3.32980.0**, **Renga API 2.50**, **Windows x64**, and **.NET 8**. Other versions have not been validated.
+---
 
-The source repository excludes Renga SDK binary libraries. To build, use **Visual Studio 2022**, **.NET 8 SDK**, and the official **Renga SDK 9.3**. See [installation](docs/INSTALL.md) and [development](docs/DEVELOPMENT.md).
+## 🚀 Why use it?
 
-## Installation
+Changing a Collaboration Server in Renga normally requires manually editing the host, port, user name and access key in **Settings → Collaboration**, followed by restarting the application.
 
-Copy the complete compiled plugin output into:
+**Renga Server Switcher** stores these settings as named profiles and lets you activate another profile in a few steps, including a prompt to save unsaved project changes before the restart.
 
-```text
-C:\Program Files\Renga Professional\Plugins\RengaServerSwitcher\
+## ✨ Features
+
+| | Feature | Description |
+|:--:|---|---|
+| 🗂️ | **Server profiles** | Store a name, IP/DNS, port, user name and access key |
+| 🔄 | **Automatic relaunch** | Apply connection settings after Renga exits and restart it |
+| 📴 | **Offline working mode** | Work without connecting to a saved collaboration server |
+| 🟢 | **Active profile** | See connection status and highlighted active profile |
+| 📡 | **Server reachability test** | Test TCP access to the host and port |
+| ⚙️ | **Per-profile synchronization** | Store automatic change synchronization separately |
+| 🔐 | **DPAPI encryption** | Encrypt access keys in the plugin's profile store |
+| 💾 | **Project safety** | Prompt to save unsaved project changes |
+| 🧰 | **Profile management** | Add, edit, delete and detect duplicates |
+| 📝 | **Preferences and logs** | Optional window auto-show and diagnostics |
+
+## 🔁 Switching workflow
+
+```mermaid
+flowchart LR
+    A["Select profile"] --> B["Confirm"]
+    B --> C["Save project if needed"]
+    C --> D["Close Renga"]
+    D --> E["Apply settings"]
+    E --> F["Relaunch Renga"]
+    F --> G["Use selected server"]
 ```
 
-Restart Renga and enable the plugin under **Plug-ins** if necessary.
+| Scenario | Action |
+|---|---|
+| Server A → Server B | Select profile B and click **Connect** |
+| Server → Offline | Click **Work locally** |
+| Offline → Server | Select a saved profile and confirm |
 
-## How to use
+## 📦 Install
 
-1. Open **Renga Server Switcher** from the Renga toolbar.
-2. Select a saved server and click **Connect**, or choose **Work locally**.
-3. Confirm the restart and save any unsaved project changes when prompted.
+1. Download the compiled ZIP from [Releases](../../releases), if a binary release is available.
+2. Completely close Renga.
+3. Extract the compiled plugin files to:
 
-## Important notes
+   ```text
+   C:\Program Files\Renga Professional\Plugins\RengaServerSwitcher\
+   ```
 
-- **DPAPI only protects the plugin profile store.** The Renga application itself can write the active server access key to its `settings.ini` file and backup.
-- Local mode is implemented by using an unreachable loopback endpoint, not an official Renga offline API switch.
-- Successful TCP testing does not verify the access key or authorization.
-- The automated relaunch uses a separate helper and a Windows Explorer-parent process strategy verified on the stated test environment.
+4. Start Renga, enable the module under **Plug-ins** if needed and open its toolbar button.
 
-## License
+> GitHub-generated `Source code (zip)` contains **source files, not a compiled plugin**. Use the separate binary ZIP in **Release assets** for installation.
 
-Copyright © 2026 **kartashov_ma**. **All rights reserved.** See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
+## 🛠 Build from source
+
+Tested configuration: **Renga Professional 9.3.32980.0**, **Renga API 2.50**, **Windows x64**, **.NET 8**, **Visual Studio 2022**. You need official Renga SDK 9.3 libraries locally; SDK binaries are intentionally excluded from the source repository. Build the solution in **Release / x64**.
+
+See [DEVELOPMENT](docs/DEVELOPMENT.md) and [INSTALL](docs/INSTALL.md).
+
+## 🔐 Security and limitations
+
+> [!IMPORTANT]
+> DPAPI encryption protects **only the plugin's stored server profiles**. Renga itself can write the active server access key into `settings.ini` and a backup. Do not share those files.
+
+> [!NOTE]
+> A successful TCP reachability test does not verify credentials or authorization.
+
+> [!WARNING]
+> Offline working mode uses an unreachable loopback endpoint, not an official Renga Offline API. Compatibility with versions other than the tested build has not been validated.
+
+## 📚 Documentation
+
+| Document | Purpose |
+|---|---|
+| [USER_GUIDE](docs/USER_GUIDE.md) | Working with profiles and offline mode (Russian) |
+| [INSTALL](docs/INSTALL.md) | Installation and build instructions |
+| [ARCHITECTURE](docs/ARCHITECTURE.md) | Components and restart workflow |
+| [DEVELOPMENT](docs/DEVELOPMENT.md) | SDK setup, build and packaging |
+| [COMPATIBILITY](docs/COMPATIBILITY.md) | Tested versions |
+| [TROUBLESHOOTING](docs/TROUBLESHOOTING.md) | Problem diagnosis |
+| [SECURITY](SECURITY.md) | Sensitive information and vulnerability reports |
+| [CHANGELOG](CHANGELOG.md) | Version history |
+
+## 📌 Status & author
+
+**Version:** `1.1.2` · **Status:** Stable on tested configuration · **Author:** `kartashov_ma` · **Year:** 2026.
+
+Copyright © 2026 `kartashov_ma`. **All rights reserved.** See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
+
+---
+
+<div align="center">
+  <strong>Renga Server Switcher</strong><br />
+  <sub>Less manual configuration. Faster switching. Safer project handoff.</sub><br /><br />
+  <a href="README.md">Русский</a> · <a href="../../releases">Releases</a>
+</div>
