@@ -1,0 +1,8 @@
+Repository name: RengaServerSwitcher
+Description (EN): Server profiles, safe switching and offline mode for Renga Professional 9.3 Collaboration Server.
+Description (RU): Менеджер профилей серверов совместной работы и безопасное переключение для Renga Professional.
+Topics: renga, renga-bim, renga-professional, collaboration, server-switcher, wpf, csharp, plugin
+Release tag: v1.1.2
+Release title: Renga Server Switcher v1.1.2
+Author: kartashov_ma
+License: All rights reserved (do not select MIT/GPL automatically)

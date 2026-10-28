@@ -1,0 +1,9 @@
+<RengaPlugin>
+  <Name>Renga Server Switcher</Name>
+  <Version>1.1.2.0</Version>
+  <RequiredAPIVersion>2.50</RequiredAPIVersion>
+  <Vendor>kartashov_ma</Vendor>
+  <Copyright>kartashov_ma, 2026</Copyright>
+  <PluginFilename>RengaServerSwitcher.Plugin.dll</PluginFilename>
+  <PluginType>Net8</PluginType>
+</RengaPlugin>

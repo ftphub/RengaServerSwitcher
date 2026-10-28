@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RengaServerSwitcher.Plugin", "src\RengaServerSwitcher.Plugin\RengaServerSwitcher.Plugin.csproj", "{9A1E7F7E-8C9A-4E17-8A0A-AF903F64A9B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RengaServerSwitcher.RestartHelper", "src\RengaServerSwitcher.RestartHelper\RengaServerSwitcher.RestartHelper.csproj", "{B786FB02-0D57-4050-8A8A-9EE28BC2AB44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A1E7F7E-8C9A-4E17-8A0A-AF903F64A9B1}.Debug|x64.ActiveCfg = Debug|x64
+		{9A1E7F7E-8C9A-4E17-8A0A-AF903F64A9B1}.Debug|x64.Build.0 = Debug|x64
+		{9A1E7F7E-8C9A-4E17-8A0A-AF903F64A9B1}.Release|x64.ActiveCfg = Release|x64
+		{9A1E7F7E-8C9A-4E17-8A0A-AF903F64A9B1}.Release|x64.Build.0 = Release|x64
+		{B786FB02-0D57-4050-8A8A-9EE28BC2AB44}.Debug|x64.ActiveCfg = Debug|x64
+		{B786FB02-0D57-4050-8A8A-9EE28BC2AB44}.Debug|x64.Build.0 = Debug|x64
+		{B786FB02-0D57-4050-8A8A-9EE28BC2AB44}.Release|x64.ActiveCfg = Release|x64
+		{B786FB02-0D57-4050-8A8A-9EE28BC2AB44}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+EndGlobal

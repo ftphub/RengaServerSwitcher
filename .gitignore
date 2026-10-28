@@ -1,0 +1,43 @@
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+**/bin/
+**/obj/
+_build/
+*.pdb
+*.cache
+TestResults/
+
+# SDK binaries: copy locally from official Renga SDK
+lib/*
+!lib/README.md
+
+# Renga/plugin user data, secrets and crash data
+**/Settings.ini
+**/settings.ini
+**/settings.ini.rss.bak
+**/profiles.json
+**/settings.json
+**/local-mode.marker
+**/Pending/
+**/Logs/
+**/crashdump.dmp
+**/crashrpt.xml
+*.dmp
+*.log
+*.bcf
+*.bcfzip
+
+# OS files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Temporary and packaged releases
+*.tmp
+*.bak
+releases/
